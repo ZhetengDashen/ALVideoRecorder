@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alivc_recorder_no_free_memory">剩余磁盘空间不足</string>
+    <string name="alivc_recorder_filter_null">原片</string>
+    <string name="alivc_recorder_camera_permission_tip">请开启摄像头/存储权限</string>
+
+    <string name="alivc_recorder_setting">去设置</string>
+</resources>

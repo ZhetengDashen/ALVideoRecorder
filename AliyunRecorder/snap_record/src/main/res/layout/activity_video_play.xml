@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aliyun.svideo.paly.VideoPlayActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl"
+        app:layout_constraintTop_toTopOf="@+id/aliyun_tools_bar"
+        tools:ignore="MissingConstraints">
+
+        <cn.jzvd.JzvdStd
+            android:id="@+id/jz_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/aliyun_tools_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alivc_common_height_group_60"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/alivc_common_size_icon_32"
+            android:layout_height="@dimen/alivc_common_size_icon_32"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="@dimen/alivc_common_margin_15"
+            android:src="?attr/qusnap_back_icon" />
+
+
+    </FrameLayout>
+
+    <android.support.constraint.ConstraintLayout
+         android:background="@color/alivc_common_bg_black_alpha_70"
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/alivc_record_lin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent"></View>
+
+        <ImageView
+            android:id="@+id/iv_no"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/im_no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <ImageView
+            android:id="@+id/iv_yes"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/im_yes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

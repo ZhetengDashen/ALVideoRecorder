@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.zheteng'
+android {
+    compileSdkVersion externalCompileSdkVersion
+    buildToolsVersion externalBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion externalMinSdkVersion
+        targetSdkVersion externalTargetSdkVersion
+        compileOptions {
+            sourceCompatibility 1.8
+            targetCompatibility 1.8
+        }
+    }
+
+}
+
+dependencies {
+    implementation externalAndroidSupportV4
+    implementation externalAndroidAppCompatV7
+}

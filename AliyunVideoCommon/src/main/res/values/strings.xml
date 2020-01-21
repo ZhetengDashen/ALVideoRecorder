@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="aliyun_common_confirm">Ok</string>
+    <string name="aliyun_common_cancel">Cancel</string>
+    <string name="aliyun_common_update_app">A new version is available. Upgrade to the new version?</string>
+    <string name="aliyun_common_updating">Updating...</string>
+
+    <string name="alivc_common_cancel">Cancel</string>
+
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="aliyun_common_confirm">确定</string>
+    <string name="aliyun_common_cancel">取消</string>
+    <string name="aliyun_common_update_app">发现新版本，请升级</string>
+    <string name="aliyun_common_updating">升级中</string>
+
+
+    <string name="alivc_common_cancel">取消</string>
+</resources>

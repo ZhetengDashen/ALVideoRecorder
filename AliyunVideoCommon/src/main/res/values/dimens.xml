@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--控件、图片(ImageView)的宽度-->
+    <!--end-->
+
+
+
+    <!--控件、图片(ImageView)的高度-->
+
+    <dimen name="alivc_common_height_group_60">60dp</dimen>
+
+    <!--end-->
+
+
+    <!--size,宽高相等时使用，即正方形的控件、图片(ImageView)-->
+    <dimen name="alivc_common_size_icon_12">12dp</dimen>
+    <dimen name="alivc_common_size_icon_15">15dp</dimen>
+    <dimen name="alivc_common_size_icon_20">20dp</dimen>
+    <dimen name="alivc_common_size_icon_32">32dp</dimen>
+    <dimen name="alivc_common_size_icon_50">50dp</dimen>
+    <dimen name="alivc_common_size_icon_60">60dp</dimen>
+
+    <!--end-->
+
+
+    <!--padding值-->
+    <dimen name="alivc_common_padding_2">2dp</dimen>
+    <dimen name="alivc_common_padding_5">5dp</dimen>
+    <dimen name="alivc_common_padding_8">8dp</dimen>
+    <dimen name="alivc_common_padding_12">12dp</dimen>
+    <dimen name="alivc_common_padding_15">15dp</dimen>
+    <!--end-->
+
+
+    <!--margin值-->
+    <dimen name="alivc_common_margin_15">15dp</dimen>
+    <dimen name="alivc_common_margin_20">20dp</dimen>
+    <dimen name="alivc_common_margin_60">60dp</dimen>
+    <dimen name="alivc_common_margin_64">64dp</dimen>
+    <!--end-->
+
+
+    <!--基准线，主要为与边界距离-->
+    <!--end-->
+
+
+    <!--圆、圆角的半径-->
+    <dimen name="alivc_common_radius_5">5dp</dimen>
+    <!--end-->
+
+
+    <!--线的宽度-->
+    <dimen name="alivc_common_line_1dp">1dp</dimen>
+    <!--end-->
+
+
+    <!--字体的大小-->
+    <dimen name="alivc_common_font_12">12sp</dimen>
+    <dimen name="alivc_common_font_14">14sp</dimen>
+    <dimen name="alivc_common_font_16">16sp</dimen>
+    <!--end-->
+
+</resources>

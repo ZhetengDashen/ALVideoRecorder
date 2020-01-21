@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--其他一些常用颜色，除字体、背景色、线-->
+
+    <!--公用字体颜色-->
+
+    <color name="alivc_common_font_white">#ffffffff</color>
+
+    <!--主题色，代表应用整体风格的颜色-->
+    <color name="alivc_common_theme_primary">#232A42</color>
+
+    <!--公用背景色，包含前景色、填充色-->
+    <color name="alivc_common_bg_transparent">#00000000</color>
+    <color name="alivc_common_bg_white">#ffffffff</color>
+    <color name="alivc_common_bg_gray_bright">#D8D8D8</color>
+
+    <color name="alivc_common_bg_black_alpha_70">#B3000000</color>
+    <color name="alivc_common_bg_pink">#EF4B81</color>
+
+    <!--公用线的颜色，包含边界线的颜色-->
+
+</resources>

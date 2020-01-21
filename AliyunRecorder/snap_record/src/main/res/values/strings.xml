@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alivc_recorder_no_free_memory">Insufficient memory. Please clear memory cache</string>
+    <string name="alivc_recorder_filter_null">Original</string>
+    <string name="alivc_recorder_camera_permission_tip">No permission to access the camera/sdcard</string>
+
+    <string name="alivc_recorder_setting">Set</string>
+</resources>

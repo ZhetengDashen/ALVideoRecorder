@@ -1,0 +1,39 @@
+ext {
+
+    //==Android Third party,include Application Layer,SDK Layer==
+
+    //Build Gradle Plugin
+    externalAndroidBuildGradlePlugin = 'com.android.tools.build:gradle:3.1.0'
+
+    //Android support Libraries
+    externalAndroidAppCompatV7 = 'com.android.support:appcompat-v7:26.1.0'
+    externalAndroidAppCompatV7ToSnapSvideo = 'com.android.support:appcompat-v7:24.2.1'
+
+    externalAndroidCardView = 'com.android.support:cardview-v7:21.0.+'
+    externalAndroidMultiDex = 'com.android.support:multidex:1.0.2'
+    externalAndroidRecyclerView = 'com.android.support:recyclerview-v7:26.1.0'
+    externalAndroidSupportV13 = 'com.android.support:support-v13:23.4.0'
+    externalAndroidSupportV4 = 'com.android.support:support-v4:26.1.0'
+    externalAndroidDesign = 'com.android.support:design:24.2.1'
+
+
+
+    //SDK Layer
+    externalGSON = 'com.google.code.gson:gson:2.8.0'
+
+
+    //Aliyun SDK
+    externalAlivcConan = 'com.alivc.conan:AlivcConan:1.0.2'
+    externalAlivcFFmpeg = 'com.aliyun.video.android:AlivcSvideoFFmpeg:1.1.0'
+    externalAlivcCore = 'com.aliyun.video.android:core:1.2.2'
+    externalSvideosnap = 'com.aliyun.video.android:svideosnap:3.14.0'
+
+    //Android SDK/Tools Version
+    externalCompileSdkVersion = 29
+    externalBuildToolsVersion = '29.0.0'
+    //The MinSdkVersion of the product you can add like this: externalSVideoMinSdkVersion 15
+    externalMinSdkVersion = 16
+    externalPlayerMinSdkVersion = 16
+    externalLiveMinSdkVersion = 18
+    externalTargetSdkVersion = 29
+}

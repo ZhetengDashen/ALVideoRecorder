@@ -15,7 +15,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aliyun.svideo.FileUtils;
 import com.aliyun.svideo.paly.VideoPlayActivity;
+import com.aliyun.svideo.snap.record.AliShootVideoUtils;
 import com.aliyun.svideo.snap.record.AliyunVideoRecorder;
 import com.aliyun.common.utils.StorageUtils;
 import com.aliyun.snap.R;
@@ -51,7 +53,7 @@ public class SnapRecorderSetting extends Activity implements View.OnClickListene
     private static final int PROGRESS_1_1 = 66;
     private static final int PROGRESS_9_16 = 100;
 
-    private static final int REQUEST_RECORD = 2001;
+
 
     private TextView startRecordTxt, recordResolutionTxt, videoQualityTxt, videoRatioTxt;
     private SeekBar resolution, videoQualityBar, videoRatio;
@@ -90,7 +92,7 @@ public class SnapRecorderSetting extends Activity implements View.OnClickListene
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_RECORD) {
+        if (requestCode == AliShootVideoUtils.REQUESTCODESHOOTVIDEO) {
             if (resultCode == Activity.RESULT_OK && data != null) {
                 int type = data.getIntExtra(AliyunVideoRecorder.RESULT_TYPE, 0);
                 if (type == AliyunVideoRecorder.RESULT_TYPE_CROP) {
@@ -293,10 +295,10 @@ public class SnapRecorderSetting extends Activity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if (v == startRecordTxt) {
-//            if(true){
-//                startActivity(new Intent(this, VideoPlayActivity.class));
-//                return;
-//            }
+            if(true){
+                AliShootVideoUtils.start(SnapRecorderSetting.this,"" );
+                return;
+            }
 
 
             int min = 4000;
@@ -362,7 +364,7 @@ public class SnapRecorderSetting extends Activity implements View.OnClickListene
             .setSortMode(AliyunSnapVideoParam.SORT_MODE_VIDEO)
             .build();
             if (!FastClickUtil.isFastClickActivity(AliyunVideoRecorder.class.getSimpleName())) {
-                AliyunVideoRecorder.startRecordForResult(this, REQUEST_RECORD, recordParam,"");
+                AliyunVideoRecorder.startRecordForResult(this, AliShootVideoUtils.REQUESTCODESHOOTVIDEO, recordParam,"");
             }
         } else if (v == backBtn) {
             finish();

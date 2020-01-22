@@ -23,7 +23,5 @@
 ```
 ###### 2.播放视频
  ```
- Intent intent =new Intent(activity, VideoPlayActivity.class);
-        intent.putExtra(PlayVideoActiviy.KEY_FILE_PATH, videoPath);
-        activity.startActivity(intent);
+ VideoPlayTools.play(Activity activity, String  videoPath);
 ```

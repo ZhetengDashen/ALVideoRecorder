@@ -26,6 +26,7 @@ import static com.aliyun.svideo.snap.record.AliyunVideoRecorder.RESULT_TYPE;
  * 描述：视频播放
  */
 public class VideoPlayActivity extends Activity  {
+
     public static final String KEY_FILE_PATH = "videoPath";
     public static final String KEY_ACTION_TYPE = "actionType";
     String filePath = "";

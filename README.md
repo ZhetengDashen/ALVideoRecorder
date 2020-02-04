@@ -14,7 +14,7 @@
                 int type = data.getIntExtra(AliyunVideoRecorder.RESULT_TYPE, 0);
                if (type == AliyunVideoRecorder.RESULT_TYPE_RECORD) {
                    Log.e("KK",data.getStringExtra(AliyunVideoRecorder.OUTPUT_PATH));
-                    videoCallback(data.getStringExtra(AliyunVideoRecorder.OUTPUT_PATH));
+                 String videoPath=    data.getStringExtra(AliyunVideoRecorder.OUTPUT_PATH);
                 }
             }
         }

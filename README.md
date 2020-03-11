@@ -25,3 +25,14 @@
  ```
  VideoPlayTools.play(Activity activity, String  videoPath);
 ```
+###### 3.实时帧回调
+```
+ AliShotVideoConfig aliShotVideoConfig=new AliShotVideoConfig();
+                 aliShotVideoConfig.setMaxTime(10);
+                 AliShootVideoUtils.start(this,aliShotVideoConfig,"", new ShootVideoOnFrame() {
+                     @Override
+                     public void OnFrame(byte[] bytes, int width, int height) {
+
+                     }
+                 });
+```

@@ -157,6 +157,7 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
     private String outPath;
     private static final String ACTIVITY_NAME_CROP = "com.aliyun.svideo.snap.crop.SnapMediaActivity";
     private String outputFilePath="";
+    private  static  ShootVideoOnFrame videoOnFrame;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -199,6 +200,40 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
         intent.putExtra(OUTPUT_PATH,outPath);
         activity.startActivityForResult(intent, requestCode);
     }
+    public static void startRecordForResult(Activity activity, int requestCode, AliyunSnapVideoParam param,String outPath,ShootVideoOnFrame shootVideoOnFrame) {
+        Intent intent = new Intent(activity, AliyunVideoRecorder.class);
+        intent.putExtra(AliyunSnapVideoParam.VIDEO_RESOLUTION, param.getResolutionMode());
+        intent.putExtra(AliyunSnapVideoParam.VIDEO_RATIO, param.getRatioMode());
+        intent.putExtra(AliyunSnapVideoParam.RECORD_MODE, param.getRecordMode());
+        intent.putExtra(AliyunSnapVideoParam.FILTER_LIST, param.getFilterList());
+        intent.putExtra(AliyunSnapVideoParam.BEAUTY_LEVEL, param.getBeautyLevel());
+        intent.putExtra(AliyunSnapVideoParam.BEAUTY_STATUS, param.getBeautyStatus());
+        intent.putExtra(AliyunSnapVideoParam.CAMERA_TYPE, param.getCameraType());
+        intent.putExtra(AliyunSnapVideoParam.FLASH_TYPE, param.getFlashType());
+        intent.putExtra(AliyunSnapVideoParam.NEED_CLIP, param.isNeedClip());
+        intent.putExtra(AliyunSnapVideoParam.MAX_DURATION, param.getMaxDuration());
+        intent.putExtra(AliyunSnapVideoParam.MIN_DURATION, param.getMinDuration());
+        intent.putExtra(AliyunSnapVideoParam.VIDEO_QUALITY, param.getVideoQuality());
+        intent.putExtra(AliyunSnapVideoParam.VIDEO_GOP, param.getGop());
+        intent.putExtra(AliyunSnapVideoParam.SORT_MODE, param.getSortMode());
+
+
+        intent.putExtra(AliyunSnapVideoParam.VIDEO_FRAMERATE, param.getFrameRate());
+        intent.putExtra(AliyunSnapVideoParam.CROP_MODE, param.getScaleMode());
+        intent.putExtra(AliyunSnapVideoParam.MIN_CROP_DURATION, param.getMinCropDuration());
+        intent.putExtra(AliyunSnapVideoParam.MIN_VIDEO_DURATION, param.getMinVideoDuration());
+        intent.putExtra(AliyunSnapVideoParam.MAX_VIDEO_DURATION, param.getMaxVideoDuration());
+        intent.putExtra(AliyunSnapVideoParam.SORT_MODE, param.getSortMode());
+        intent.putExtra(OUTPUT_PATH,outPath);
+        activity.startActivityForResult(intent, requestCode);
+        if(null!=shootVideoOnFrame){
+            AliyunVideoRecorder.setShootVideoOnFrame(shootVideoOnFrame);
+        }
+    }
+
+    public static void setShootVideoOnFrame(ShootVideoOnFrame shootVideoOnFrame){
+        videoOnFrame=shootVideoOnFrame;
+    };
 
     public static void startRecord(Context context, AliyunSnapVideoParam param) {
         Intent intent = new Intent(context, AliyunVideoRecorder.class);
@@ -411,7 +446,10 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
             @Override
             public void onFrameBack(byte[] bytes, int width, int height, Camera.CameraInfo info) {
                 isOpenFailed = false;
-//                Log.e("---------","-------------");
+
+                if(null!=videoOnFrame){
+                    videoOnFrame.OnFrame(bytes,width,height);
+                }
             }
 
             @Override

@@ -28,6 +28,11 @@ public class AliShootVideoUtils {
     }
 
     public static void start(Context context,AliShotVideoConfig shotVideoConfig,String outPath){
+        start(context,shotVideoConfig,outPath,null);
+    }
+
+    public static void start(Context context,AliShotVideoConfig shotVideoConfig,String outPath,ShootVideoOnFrame shootVideoOnFrame){
+
         VideoQuality videoQuality;
         switch (shotVideoConfig.getVideoQuality()){
             case AliShotVideoConfig.ConfigParameter.PROGRESS_LOW:
@@ -72,8 +77,13 @@ public class AliShootVideoUtils {
                 .setSortMode(AliyunSnapVideoParam.SORT_MODE_VIDEO)
                 .build();
 
-        if (!FastClickUtil.isFastClickActivity(AliyunVideoRecorder.class.getSimpleName())) {
-            AliyunVideoRecorder.startRecordForResult((Activity) context, REQUESTCODESHOOTVIDEO, recordParam,outPath);
-        }
+
+
+            if (!FastClickUtil.isFastClickActivity(AliyunVideoRecorder.class.getSimpleName())) {
+                AliyunVideoRecorder.startRecordForResult((Activity) context, REQUESTCODESHOOTVIDEO, recordParam,outPath,shootVideoOnFrame);
+            }
+
     }
+
+
 }

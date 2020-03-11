@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.aliyun.alivcsolution.VideoSetingActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="185dp"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

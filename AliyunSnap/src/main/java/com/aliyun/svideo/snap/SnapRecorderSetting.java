@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.aliyun.svideo.FileUtils;
 import com.aliyun.svideo.paly.VideoPlayActivity;
 import com.aliyun.svideo.snap.record.AliShootVideoUtils;
+import com.aliyun.svideo.snap.record.AliShotVideoConfig;
 import com.aliyun.svideo.snap.record.AliyunVideoRecorder;
 import com.aliyun.common.utils.StorageUtils;
 import com.aliyun.snap.R;
@@ -29,6 +30,7 @@ import com.aliyun.svideo.sdk.external.struct.recorder.FlashType;
 import com.aliyun.svideo.sdk.external.struct.snap.AliyunSnapVideoParam;
 import com.aliyun.svideo.sdk.external.struct.common.CropKey;
 import com.aliyun.svideo.common.utils.FastClickUtil;
+import com.aliyun.svideo.snap.record.ShootVideoOnFrame;
 
 import java.io.File;
 
@@ -296,7 +298,15 @@ public class SnapRecorderSetting extends Activity implements View.OnClickListene
     public void onClick(View v) {
         if (v == startRecordTxt) {
             if(true){
-                AliShootVideoUtils.start(SnapRecorderSetting.this,"" );
+//                AliShootVideoUtils.start(SnapRecorderSetting.this,"" );
+                AliShotVideoConfig aliShotVideoConfig=new AliShotVideoConfig();
+                aliShotVideoConfig.setMaxTime(10);
+                AliShootVideoUtils.start(this,aliShotVideoConfig,"", new ShootVideoOnFrame() {
+                    @Override
+                    public void OnFrame(byte[] bytes, int width, int height) {
+                        Log.e("kkk","--------------");
+                    }
+                });
                 return;
             }
 

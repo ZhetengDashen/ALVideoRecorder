@@ -31,7 +31,7 @@
                  aliShotVideoConfig.setMaxTime(10);
                  AliShootVideoUtils.start(this,aliShotVideoConfig,"", new ShootVideoOnFrame() {
                      @Override
-                     public void OnFrame(byte[] bytes, int width, int height) {
+                     public void OnFrame(byte[] bytes, int width, int height，Camera.CameraInfo info) {
 
                      }
                  });

@@ -448,7 +448,7 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
                 isOpenFailed = false;
 
                 if(null!=videoOnFrame){
-                    videoOnFrame.OnFrame(bytes,width,height);
+                    videoOnFrame.OnFrame(bytes,width,height,info);
                 }
             }
 

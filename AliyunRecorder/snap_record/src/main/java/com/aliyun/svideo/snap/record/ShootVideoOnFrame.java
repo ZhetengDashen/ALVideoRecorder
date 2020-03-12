@@ -1,5 +1,7 @@
 package com.aliyun.svideo.snap.record;
 
+import android.hardware.Camera;
+
 /**
  * 作者：WangZhiQiang
  * 时间：2020/3/11
@@ -8,5 +10,5 @@ package com.aliyun.svideo.snap.record;
  *
  * */
 public interface ShootVideoOnFrame {
-    void OnFrame(byte[] bytes, int width, int height);
+    void OnFrame(byte[] bytes, int width, int height,Camera.CameraInfo info);
 }

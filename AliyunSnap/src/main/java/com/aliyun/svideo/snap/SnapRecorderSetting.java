@@ -2,6 +2,7 @@ package com.aliyun.svideo.snap;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.hardware.Camera;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -298,13 +299,13 @@ public class SnapRecorderSetting extends Activity implements View.OnClickListene
     public void onClick(View v) {
         if (v == startRecordTxt) {
             if(true){
-//                AliShootVideoUtils.start(SnapRecorderSetting.this,"" );
+//              AliShootVideoUtils.start(SnapRecorderSetting.this,"" );
                 AliShotVideoConfig aliShotVideoConfig=new AliShotVideoConfig();
                 aliShotVideoConfig.setMaxTime(10);
-                AliShootVideoUtils.start(this,aliShotVideoConfig,"", new ShootVideoOnFrame() {
+                AliShootVideoUtils.start(this, aliShotVideoConfig, "", new ShootVideoOnFrame() {
                     @Override
-                    public void OnFrame(byte[] bytes, int width, int height) {
-                        Log.e("kkk","--------------");
+                    public void OnFrame(byte[] bytes, int width, int height, Camera.CameraInfo info) {
+                        Log.e("------","----");
                     }
                 });
                 return;

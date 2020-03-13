@@ -446,8 +446,7 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
             @Override
             public void onFrameBack(byte[] bytes, int width, int height, Camera.CameraInfo info) {
                 isOpenFailed = false;
-
-                if(null!=videoOnFrame){
+                if(null!=videoOnFrame&&isRecording){
                     videoOnFrame.OnFrame(bytes,width,height,info);
                 }
             }

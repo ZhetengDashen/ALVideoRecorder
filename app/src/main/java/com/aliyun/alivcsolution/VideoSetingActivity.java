@@ -1,5 +1,6 @@
 package com.aliyun.alivcsolution;
 
+import android.hardware.Camera;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -34,10 +35,10 @@ public class VideoSetingActivity extends AppCompatActivity implements View.OnCli
             case R.id.button:
                 AliShotVideoConfig aliShotVideoConfig=new AliShotVideoConfig();
                 aliShotVideoConfig.setMaxTime(10);
-                AliShootVideoUtils.start(this,aliShotVideoConfig,"", new ShootVideoOnFrame() {
+                AliShootVideoUtils.start(this, aliShotVideoConfig, "", new ShootVideoOnFrame() {
                     @Override
-                    public void OnFrame(byte[] bytes, int width, int height) {
-
+                    public void OnFrame(byte[] bytes, int width, int height, Camera.CameraInfo info) {
+                        Log.e("------------","------------");
                     }
                 });
 

@@ -97,9 +97,10 @@ public class VideoPlayActivity extends Activity  {
             });
         }
 
-        jz_video.setMediaInterface(JZMediaIjk.class);
+//        jz_video.setMediaInterface(JZMediaIjk.class);
         jz_video.setUp(filePath
-                , "");
+                , "", JzvdStd.NORMAL_ORIENTATION,JZMediaIjk.class);
+
         jz_video.startVideo();
 
     }

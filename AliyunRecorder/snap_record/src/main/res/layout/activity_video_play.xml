@@ -20,6 +20,7 @@
             android:layout_height="match_parent" />
     </LinearLayout>
     <FrameLayout
+        android:visibility="gone"
         android:id="@+id/aliyun_tools_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/alivc_common_height_group_60"

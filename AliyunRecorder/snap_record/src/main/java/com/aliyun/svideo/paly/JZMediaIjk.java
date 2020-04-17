@@ -133,8 +133,17 @@ public class JZMediaIjk extends JZMediaInterface implements IMediaPlayer.OnPrepa
 
     @Override
     public long getCurrentPosition() {
-        return ijkMediaPlayer.getCurrentPosition();
+        if (ijkMediaPlayer == null) {
+            return 0;
+        }
+        try {
+          return   ijkMediaPlayer.getCurrentPosition();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return 0;
     }
+
 
     @Override
     public long getDuration() {

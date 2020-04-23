@@ -61,7 +61,18 @@ public class VideoPlayActivity extends Activity  {
 
         jz_video = (JzvdStd) findViewById(R.id.jz_video);
         filePath = getIntent().getStringExtra(KEY_FILE_PATH);
-
+        jz_video.setUp(filePath
+                , "", JzvdStd.NORMAL_ORIENTATION,JZMediaIjk.class);
+        jz_video.startVideo();
+        jz_video.fullscreenButton.setVisibility(View.GONE);
+        jz_video.backButton.setVisibility(View.GONE);
+        jz_video.fullscreenButton.setOnClickListener(null);
+        jz_video.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 //        filePath = "/storage/emulated/0/com.baseeasy.baseframework/no_user/video/1579571585318.mp4";
         if (TextUtils.isEmpty(filePath)) {
             Toast.makeText(this, "视频路径错误", Toast.LENGTH_SHORT).show();
@@ -98,25 +109,20 @@ public class VideoPlayActivity extends Activity  {
         }
 
 //        jz_video.setMediaInterface(JZMediaIjk.class);
-        jz_video.setUp(filePath
-                , "", JzvdStd.NORMAL_ORIENTATION,JZMediaIjk.class);
 
-        jz_video.startVideo();
 
     }
 
+
     @Override
-    public void onBackPressed() {
-        if (Jzvd.backPress()) {
-            return;
-        }
-        super.onBackPressed();
+    protected void onDestroy() {
+        Jzvd.releaseAllVideos();
+        super.onDestroy();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Jzvd.releaseAllVideos();
     }
 
 

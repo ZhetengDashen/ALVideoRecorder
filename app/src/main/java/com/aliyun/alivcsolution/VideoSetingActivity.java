@@ -40,14 +40,14 @@ public class VideoSetingActivity extends AppCompatActivity implements View.OnCli
                 VideoPlayTools.play(this, "/storage/emulated/0/DCIM/Camera/1587095994187.mp4");
 
 
-//                AliShotVideoConfig aliShotVideoConfig=new AliShotVideoConfig();
-//                aliShotVideoConfig.setMaxTime(10);
-//                AliShootVideoUtils.start(this, aliShotVideoConfig, "", new ShootVideoOnFrame() {
-//                    @Override
-//                    public void OnFrame(byte[] bytes, int width, int height, Camera.CameraInfo info) {
-//                        Log.e("------------","------------");
-//                    }
-//                });
+                AliShotVideoConfig aliShotVideoConfig=new AliShotVideoConfig();
+                aliShotVideoConfig.setMaxTime(10);
+                AliShootVideoUtils.start(this, aliShotVideoConfig, "", new ShootVideoOnFrame() {
+                    @Override
+                    public void OnFrame(byte[] bytes, int width, int height, Camera.CameraInfo info) {
+                        Log.e("------------","------------");
+                    }
+                });
 
                 break;
         }

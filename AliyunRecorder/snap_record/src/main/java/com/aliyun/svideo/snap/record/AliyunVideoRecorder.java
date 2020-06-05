@@ -16,8 +16,7 @@ import android.hardware.Camera;
 import android.media.MediaScannerConnection;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -34,6 +33,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 import com.aliyun.common.global.Version;
 import com.aliyun.common.utils.CommonUtil;
@@ -233,7 +234,7 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -450,20 +451,20 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
                     scanFile(outputPath);
                 }
                 outputFilePath = outputPath;
-                if(isPreview){
-                       mClipManager.deleteAllPart();
-                       Intent intent2 = new Intent();
-                       intent2.putExtra(OUTPUT_PATH, outputFilePath);
-                       intent2.putExtra(RESULT_TYPE, RESULT_TYPE_RECORD);
-                       setResult(Activity.RESULT_OK, intent2);
-                       finish();
-                   }else {
-                       Intent intent = new Intent(AliyunVideoRecorder.this, VideoPlayActivity.class);
-                       intent.putExtra(VideoPlayActivity.KEY_ACTION_TYPE, VideoPlayActivity.ACTION_TYPE_EDITOR);
-                       intent.putExtra(VideoPlayActivity.KEY_FILE_PATH, outputPath);
-                       AliyunVideoRecorder.this.startActivityForResult(intent, RESULT_TYPE_PREVIEW);
+                if(!isPreview){
+                    mClipManager.deleteAllPart();
+                    Intent intent2 = new Intent();
+                    intent2.putExtra(OUTPUT_PATH, outputFilePath);
+                    intent2.putExtra(RESULT_TYPE, RESULT_TYPE_RECORD);
+                    setResult(Activity.RESULT_OK, intent2);
+                    finish();
+                }else {
+                    Intent intent = new Intent(AliyunVideoRecorder.this, VideoPlayActivity.class);
+                    intent.putExtra(VideoPlayActivity.KEY_ACTION_TYPE, VideoPlayActivity.ACTION_TYPE_EDITOR);
+                    intent.putExtra(VideoPlayActivity.KEY_FILE_PATH, outputPath);
+                    AliyunVideoRecorder.this.startActivityForResult(intent, RESULT_TYPE_PREVIEW);
 
-                   }
+                }
 //                mClipManager.deleteAllPart();
 //                Intent intent = new Intent();
 //                intent.putExtra(OUTPUT_PATH, outputPath);
@@ -836,8 +837,8 @@ public class AliyunVideoRecorder extends Activity implements View.OnClickListene
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode,  String[] permissions,
+                                           int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         boolean isAllGranted = true;
 

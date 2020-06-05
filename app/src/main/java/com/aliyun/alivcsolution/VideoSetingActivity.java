@@ -37,7 +37,10 @@ public class VideoSetingActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button:
-                VideoPlayTools.play(this, "/storage/emulated/0/DCIM/Camera/1587095994187.mp4");
+
+
+//     VideoPlayTools.play(this, "http://householdfile.oss-cn-beijing.aliyuncs.com/authsdebug/video/云平1501211960050110141588931214578.mp4");
+//       VideoPlayTools.play(this, "/storage/emulated/0/DCIM/Camera/1591342557035.mp4");
 
 
                 AliShotVideoConfig aliShotVideoConfig=new AliShotVideoConfig();

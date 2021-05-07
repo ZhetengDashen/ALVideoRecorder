@@ -64,7 +64,7 @@ public class AliShootVideoUtils {
                 .setFlashType(FlashType.ON)//闪光灯
                 .setNeedClip(true)//分段录制
                 .setMaxDuration(shotVideoConfig.getMaxTime()*1000)
-                .setMinDuration(2000)//最小时长
+                .setMinDuration(shotVideoConfig.getMinTime()*1000)
                 .setVideoQuality(videoQuality)//视频质量
 //                .setGop(gop)//帧数
                 .setVideoCodec(VideoCodecs.H264_HARDWARE)

@@ -8,6 +8,7 @@ package com.aliyun.svideo.snap.record;
  */
 public class AliShotVideoConfig {
     int maxTime=120;//最大时长秒
+    int minTime=15;//最小时长秒
     int eesolutionMode= ConfigParameter.RESOLUTION_480P;//分辨率
     int eatioMode= ConfigParameter.RATIO_MODE_3_4;//比例
     int videoQuality= ConfigParameter.PROGRESS_HIGH;//质量
@@ -20,6 +21,21 @@ public class AliShotVideoConfig {
         this.eesolutionMode = eesolutionMode;
         this.eatioMode = eatioMode;
         this.videoQuality = videoQuality;
+    }
+    public AliShotVideoConfig(int maxTime, int minTime,int eesolutionMode, int eatioMode, int videoQuality) {
+        this.maxTime = maxTime;
+        this.minTime =minTime;
+        this.eesolutionMode = eesolutionMode;
+        this.eatioMode = eatioMode;
+        this.videoQuality = videoQuality;
+    }
+
+    public int getMinTime() {
+        return minTime;
+    }
+
+    public void setMinTime(int minTime) {
+        this.minTime = minTime;
     }
 
     public int getMaxTime() {
@@ -74,6 +90,7 @@ public class AliShotVideoConfig {
     }
 
     public static final class Builder {
+        int minTime=15;//最小时长秒
         int maxTime=120;//最大时长秒
         int eesolutionMode= ConfigParameter.RESOLUTION_480P;//分辨率
         int eatioMode= ConfigParameter.RATIO_MODE_3_4;//比例
@@ -107,7 +124,7 @@ public class AliShotVideoConfig {
         }
 
         public AliShotVideoConfig build() {
-            return new AliShotVideoConfig(maxTime, eesolutionMode, eatioMode, videoQuality);
+            return new AliShotVideoConfig(maxTime,minTime, eesolutionMode, eatioMode, videoQuality);
         }
     }
 }

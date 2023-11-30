@@ -4,12 +4,17 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.aliyun.svideo.common.utils.FastClickUtil;
-import com.aliyun.svideo.sdk.external.struct.common.VideoQuality;
-import com.aliyun.svideo.sdk.external.struct.encoder.VideoCodecs;
-import com.aliyun.svideo.sdk.external.struct.recorder.CameraType;
-import com.aliyun.svideo.sdk.external.struct.recorder.FlashType;
-import com.aliyun.svideo.sdk.external.struct.snap.AliyunSnapVideoParam;
 
+import com.aliyun.svideosdk.common.struct.common.AliyunSnapVideoParam;
+import com.aliyun.svideosdk.common.struct.common.VideoQuality;
+import com.aliyun.svideosdk.common.struct.encoder.VideoCodecs;
+import com.aliyun.svideosdk.common.struct.recorder.CameraType;
+import com.aliyun.svideosdk.common.struct.recorder.FlashType;
+//import com.aliyun.svideo.sdk.external.struct.common.VideoQuality;
+//import com.aliyun.svideo.sdk.external.struct.encoder.VideoCodecs;
+//import com.aliyun.svideo.sdk.external.struct.recorder.CameraType;
+//import com.aliyun.svideo.sdk.external.struct.recorder.FlashType;
+//import com.aliyun.svideo.sdk.external.struct.snap.AliyunSnapVideoParam;
 /**
  * 作者：WangZhiQiang
  * 时间：2020/1/22

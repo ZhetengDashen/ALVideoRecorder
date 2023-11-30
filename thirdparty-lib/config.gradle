@@ -23,10 +23,10 @@ ext {
 
 
     //Aliyun SDK
-    externalAlivcConan = 'com.alivc.conan:AlivcConan:1.0.2'
+    externalAlivcConan = 'com.alivc.conan:AlivcConan:1.0.5'
     externalAlivcFFmpeg = 'com.aliyun.video.android:AlivcSvideoFFmpeg:1.1.0'
     externalAlivcCore = 'com.aliyun.video.android:core:1.2.2'
-    externalSvideosnap = 'com.aliyun.video.android:svideosnap:3.14.0'
+    externalSvideosnap = 'com.aliyun.video.android:svideosnap:3.22.0'
 
     //Android SDK/Tools Version
     externalCompileSdkVersion = 29

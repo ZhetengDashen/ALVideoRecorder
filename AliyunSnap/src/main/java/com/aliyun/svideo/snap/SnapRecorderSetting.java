@@ -23,15 +23,16 @@ import com.aliyun.svideo.snap.record.AliShotVideoConfig;
 import com.aliyun.svideo.snap.record.AliyunVideoRecorder;
 import com.aliyun.common.utils.StorageUtils;
 import com.aliyun.snap.R;
-import com.aliyun.svideo.sdk.external.struct.common.VideoDisplayMode;
-import com.aliyun.svideo.sdk.external.struct.common.VideoQuality;
-import com.aliyun.svideo.sdk.external.struct.encoder.VideoCodecs;
-import com.aliyun.svideo.sdk.external.struct.recorder.CameraType;
-import com.aliyun.svideo.sdk.external.struct.recorder.FlashType;
-import com.aliyun.svideo.sdk.external.struct.snap.AliyunSnapVideoParam;
-import com.aliyun.svideo.sdk.external.struct.common.CropKey;
+
 import com.aliyun.svideo.common.utils.FastClickUtil;
 import com.aliyun.svideo.snap.record.ShootVideoOnFrame;
+import com.aliyun.svideosdk.common.struct.common.AliyunSnapVideoParam;
+import com.aliyun.svideosdk.common.struct.common.CropKey;
+import com.aliyun.svideosdk.common.struct.common.VideoDisplayMode;
+import com.aliyun.svideosdk.common.struct.common.VideoQuality;
+import com.aliyun.svideosdk.common.struct.encoder.VideoCodecs;
+import com.aliyun.svideosdk.common.struct.recorder.CameraType;
+import com.aliyun.svideosdk.common.struct.recorder.FlashType;
 
 import java.io.File;
 

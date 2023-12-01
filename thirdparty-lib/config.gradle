@@ -15,9 +15,6 @@ ext {
     externalAndroidSupportV13 = 'com.android.support:support-v13:23.4.0'
     externalAndroidSupportV4 = 'com.android.support:support-v4:26.1.0'
     externalAndroidDesign = 'com.android.support:design:24.2.1'
-
-
-
     //SDK Layer
     externalGSON = 'com.google.code.gson:gson:2.8.0'
 

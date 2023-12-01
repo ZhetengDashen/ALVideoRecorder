@@ -7,7 +7,7 @@ buildscript {
         jcenter()
 
         maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
-        
+        maven { url 'https://jitpack.io' }
     }
     apply from: 'thirdparty-lib/config.gradle'
     ext {
@@ -25,11 +25,12 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
+
        maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
         google()
         jcenter()
         flatDir { dirs 'src/main/libs' }
+        maven { url 'https://jitpack.io' }
     }
 
     buildDir = new File(rootDir, "gradle-build/${path.replaceAll(':', '/')}")
